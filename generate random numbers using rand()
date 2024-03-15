@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int main()
+{
+
+    FILE *file=fopen("rand1.txt","w");
+    if(file==NULL)
+    {
+
+        printf("File did not found");
+        return 1;
+    }
+    fprintf(file,"Random Numbers\n\n");
+    
+    for(int i=0;i<100;i++){
+        int randnumb = rand();
+        fprintf(file,"%d\n",randnumb);
+    }
+    fclose(file);
+    printf("Check the text file named 'rand1' \n");
+    return 0;
+}
